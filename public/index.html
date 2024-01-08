@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Echat - Chat Template</title>
+    <script
+      src="https://kit.fontawesome.com/904315e9a3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="online-users" id="onlineUsers">
+        Online Users: <span style="color: red;" id="userCounter">0</span>
+      </div>
+    <div class="chat-container">
+      <div class="sender-name" id="senderName">
+        <input type="text" id="nameInput" placeholder="Your Name" />
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="message user-message">
+          <div class="message-text">Hello there! This is a user message.</div>
+          <div class="message-info">
+            Your Name • <span id="time">12:34 PM</span>
+          </div>
+        </div>
+        <div class="message res-message">
+          <div class="message-text">
+            Hi! I'm a bot. Thanks for your message.
+          </div>
+          <div class="message-info">Bot • <span id="time">12:35 PM</span></div>
+        </div>
+      </div>
+      <div class="input-container">
+        <input
+          type="text"
+          id="messageInput"
+          placeholder="Type your message..."
+        />
+        <button id="sendButton"><i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
