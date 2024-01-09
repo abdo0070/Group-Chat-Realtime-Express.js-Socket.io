@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const name = nameInput.value.trim();
     if (name !== "") {
       nameInput.value = name;
+      document.getElementById("senderName").innerHTML = name;
       const messageText = messageInput.value.trim();
       if (messageText === "") return;
       const currentTime = getCurrentTime();
       const data = {
-        
         id: socket.id,
         name: name,
         message: messageText,
@@ -57,8 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     chatMessages.appendChild(message);
     // Clear the input fields
-    nameInput.value = "";
-    messageInput.value = "";
+      messageInput.value = "";
     // Scroll to the bottom of the chat
     chatMessages.scrollTop = chatMessages.scrollHeight;
   });
